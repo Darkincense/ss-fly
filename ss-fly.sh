@@ -14,8 +14,8 @@ libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.16/li
 
 fly_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-kernel_ubuntu_url="http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.2/linux-image-4.10.2-041002-generic_4.10.2-041002.201703120131_amd64.deb"
-kernel_ubuntu_file="linux-image-4.10.2-041002-generic_4.10.2-041002.201703120131_amd64.deb"
+kernel_ubuntu_url="https://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10-rc2/linux-image-4.10.0-041000rc2-generic_4.10.0-041000rc2.201701011831_amd64.deb"
+kernel_ubuntu_file="linux-image-4.10.0-041000rc2-generic_4.10.0-041000rc2.201701011831_amd64.deb"
 
 usage () {
         cat $fly_dir/sshelp
@@ -338,7 +338,7 @@ generate_config() {
     "local_port":1080,
     "password":"$1",
     "timeout":300,
-    "method":"aes-256-cfb",
+    "method":"chacha20-ietf-poly1305",
     "fast_open":false
 }
 EOF
